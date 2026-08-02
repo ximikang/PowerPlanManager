@@ -1,0 +1,11 @@
+bin/
+obj/
+.vs/
+AppPackages/
+*.user
+*.suo
+*.pfx
+*.cer
+TestResults/
+artifacts/
+src/PowerManager.App/Package.StoreAssociation.xml

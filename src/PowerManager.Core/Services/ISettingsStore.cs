@@ -1,0 +1,12 @@
+using PowerManager.Core.Models;
+
+namespace PowerManager.Core.Services;
+
+public interface ISettingsStore
+{
+    string? LastRecoveryBackupPath { get; }
+
+    Task<AppSettings> LoadAsync(CancellationToken cancellationToken = default);
+
+    Task SaveAsync(AppSettings settings, CancellationToken cancellationToken = default);
+}

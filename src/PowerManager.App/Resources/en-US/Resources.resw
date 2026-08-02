@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="AppDisplayName" xml:space="preserve"><value>Power Plan Manager</value></data>
+  <data name="AppDescription" xml:space="preserve"><value>Quickly switch and schedule Windows power plans.</value></data>
+  <data name="Main_Title.Text" xml:space="preserve"><value>Power Plan Manager</value></data>
+  <data name="Main_Subtitle.Text" xml:space="preserve"><value>Quick switching and daily automation for Windows power plans</value></data>
+  <data name="CurrentPlanLabel.Text" xml:space="preserve"><value>Current plan</value></data>
+  <data name="AutoSwitchToggle.Header" xml:space="preserve"><value>Automatic switching</value></data>
+  <data name="QuickTitle.Text" xml:space="preserve"><value>Quick modes</value></data>
+  <data name="PowerSaverButton.Content" xml:space="preserve"><value>Power saver</value></data>
+  <data name="BalancedButton.Content" xml:space="preserve"><value>Balanced</value></data>
+  <data name="HighPerformanceButton.Content" xml:space="preserve"><value>High performance</value></data>
+  <data name="UltimatePerformanceButton.Content" xml:space="preserve"><value>Ultimate performance</value></data>
+  <data name="MappingsTitle.Text" xml:space="preserve"><value>Quick slot mappings</value></data>
+  <data name="PowerSaverMappingLabel.Text" xml:space="preserve"><value>Power saver</value></data>
+  <data name="BalancedMappingLabel.Text" xml:space="preserve"><value>Balanced</value></data>
+  <data name="HighPerformanceMappingLabel.Text" xml:space="preserve"><value>High performance</value></data>
+  <data name="UltimatePerformanceMappingLabel.Text" xml:space="preserve"><value>Ultimate performance</value></data>
+  <data name="DefaultPlanLabel.Text" xml:space="preserve"><value>Plan outside scheduled ranges</value></data>
+  <data name="SaveMappingsButton.Content" xml:space="preserve"><value>Save mappings</value></data>
+  <data name="CreateMissingButton.Content" xml:space="preserve"><value>Create and bind missing standard plans</value></data>
+  <data name="ScheduleTitle.Text" xml:space="preserve"><value>Daily schedule</value></data>
+  <data name="ScheduleHint.Text" xml:space="preserve"><value>The same ranges repeat every day. Overnight ranges are supported; overlaps are not.</value></data>
+  <data name="TimelineTitle.Text" xml:space="preserve"><value>24-hour automatic schedule</value></data>
+  <data name="Timeline_Default_Format" xml:space="preserve"><value>{0}–{1}: {2} (default)</value></data>
+  <data name="Timeline_Rule_Format" xml:space="preserve"><value>{0}–{1}: {2}</value></data>
+  <data name="StartTimeLabel.Text" xml:space="preserve"><value>Start</value></data>
+  <data name="EndTimeLabel.Text" xml:space="preserve"><value>End</value></data>
+  <data name="TargetSlotLabel.Text" xml:space="preserve"><value>Mode</value></data>
+  <data name="AddRuleButton.Content" xml:space="preserve"><value>Add range</value></data>
+  <data name="DeleteRuleButton.AutomationProperties.Name" xml:space="preserve"><value>Delete range</value></data>
+  <data name="GeneralTitle.Text" xml:space="preserve"><value>General</value></data>
+  <data name="StartupToggle.Header" xml:space="preserve"><value>Start when I sign in</value></data>
+  <data name="NotificationsToggle.Header" xml:space="preserve"><value>Show status notifications</value></data>
+  <data name="LanguageLabel.Text" xml:space="preserve"><value>Language</value></data>
+  <data name="DiagnosticsTitle.Text" xml:space="preserve"><value>Diagnostics</value></data>
+  <data name="RefreshButton.Content" xml:space="preserve"><value>Refresh power plans</value></data>
+  <data name="TrayFlyoutTitle.Text" xml:space="preserve"><value>Power Plan Manager</value></data>
+  <data name="TrayAutoToggle.Header" xml:space="preserve"><value>Automatic switching</value></data>
+  <data name="TrayOpenButton.Content" xml:space="preserve"><value>Open settings</value></data>
+  <data name="Slot_PowerSaver" xml:space="preserve"><value>Power saver</value></data>
+  <data name="Slot_Balanced" xml:space="preserve"><value>Balanced</value></data>
+  <data name="Slot_HighPerformance" xml:space="preserve"><value>High performance</value></data>
+  <data name="Slot_UltimatePerformance" xml:space="preserve"><value>Ultimate performance</value></data>
+  <data name="Tray_Auto" xml:space="preserve"><value>Automatic switching</value></data>
+  <data name="Tray_Open" xml:space="preserve"><value>Open settings</value></data>
+  <data name="Tray_Exit" xml:space="preserve"><value>Exit</value></data>
+  <data name="Tray_Create_Format" xml:space="preserve"><value>{0} (create)</value></data>
+  <data name="Language_System" xml:space="preserve"><value>Follow Windows</value></data>
+  <data name="Language_English" xml:space="preserve"><value>English</value></data>
+  <data name="Language_Chinese" xml:space="preserve"><value>简体中文</value></data>
+  <data name="Plan_Unmapped" xml:space="preserve"><value>Not mapped</value></data>
+  <data name="Plan_Other" xml:space="preserve"><value>Other plan</value></data>
+  <data name="Plan_Unavailable" xml:space="preserve"><value>Unavailable</value></data>
+  <data name="NextSwitch_None" xml:space="preserve"><value>No scheduled boundary</value></data>
+  <data name="NextSwitch_Format" xml:space="preserve"><value>Next switch: {0:g}</value></data>
+  <data name="CurrentPlan_Format" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Diagnostics_Format" xml:space="preserve"><value>{0} plans found · Active GUID: {1}</value></data>
+  <data name="FirstRun_Title" xml:space="preserve"><value>Keep schedules running</value></data>
+  <data name="FirstRun_Text" xml:space="preserve"><value>Allow Power Plan Manager to start after sign-in so daily ranges continue to work. You can change this later.</value></data>
+  <data name="FirstRun_Enable" xml:space="preserve"><value>Enable startup</value></data>
+  <data name="FirstRun_Skip" xml:space="preserve"><value>Not now</value></data>
+  <data name="Create_Title" xml:space="preserve"><value>Create missing power plans?</value></data>
+  <data name="Create_Text" xml:space="preserve"><value>This adds copies of missing Windows standard plans. It does not delete or modify existing plans.</value></data>
+  <data name="CreateSlot_Title" xml:space="preserve"><value>Create {0}?</value></data>
+  <data name="CreateSlot_Text" xml:space="preserve"><value>This Windows standard plan is not available. Create a new copy, bind it to this slot, and switch to it now? Existing plans will not be changed or deleted.</value></data>
+  <data name="Create_Confirm" xml:space="preserve"><value>Create</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>Cancel</value></data>
+  <data name="Exit_Title" xml:space="preserve"><value>Exit Power Plan Manager?</value></data>
+  <data name="Exit_Text" xml:space="preserve"><value>Automatic switching stops until the app runs again.</value></data>
+  <data name="Exit_Confirm" xml:space="preserve"><value>Exit</value></data>
+  <data name="Restart_Title" xml:space="preserve"><value>Restart required</value></data>
+  <data name="Restart_Text" xml:space="preserve"><value>Restart the app to apply the selected language everywhere.</value></data>
+  <data name="Common_OK" xml:space="preserve"><value>OK</value></data>
+  <data name="Status_Saved" xml:space="preserve"><value>Settings saved.</value></data>
+  <data name="Status_Created" xml:space="preserve"><value>Available standard plans were created and bound.</value></data>
+  <data name="Status_CreatePartial" xml:space="preserve"><value>Some plans could not be created on this device. Bind an available OEM plan instead.</value></data>
+  <data name="Status_StartupBlocked" xml:space="preserve"><value>Startup is disabled by Windows settings or organization policy.</value></data>
+  <data name="Error_PlanNotFound" xml:space="preserve"><value>The mapped power plan no longer exists. Refresh or bind another plan.</value></data>
+  <data name="Error_AccessDenied" xml:space="preserve"><value>Windows denied this power plan operation.</value></data>
+  <data name="Error_Unsupported" xml:space="preserve"><value>This device does not support the requested power plan operation.</value></data>
+  <data name="Error_PolicyRestricted" xml:space="preserve"><value>Your organization policy blocks this power plan operation.</value></data>
+  <data name="Error_Generic" xml:space="preserve"><value>The operation could not be completed.</value></data>
+  <data name="Error_Overlap" xml:space="preserve"><value>This range overlaps an existing range or has identical start and end times.</value></data>
+  <data name="Error_Overlap_Format" xml:space="preserve"><value>{0}–{1} conflicts with the existing range {2}–{3}.</value></data>
+  <data name="Notification_Switched" xml:space="preserve"><value>Switched to {0}.</value></data>
+</root>

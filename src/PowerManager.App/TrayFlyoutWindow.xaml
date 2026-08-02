@@ -1,0 +1,31 @@
+<Window
+    x:Class="PowerManager.App.TrayFlyoutWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Window.SystemBackdrop>
+        <MicaBackdrop Kind="BaseAlt" />
+    </Window.SystemBackdrop>
+    <Border Padding="18" CornerRadius="12" Background="{ThemeResource CardBackgroundFillColorDefaultBrush}">
+        <StackPanel Spacing="12">
+            <TextBlock x:Uid="TrayFlyoutTitle" Style="{StaticResource TitleTextBlockStyle}" />
+            <TextBlock x:Name="CurrentPlanText" FontWeight="SemiBold" TextWrapping="Wrap" />
+            <Grid RowSpacing="8" ColumnSpacing="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button x:Name="PowerSaverButton" x:Uid="PowerSaverButton" Tag="PowerSaver" Click="QuickSlotButton_Click" HorizontalAlignment="Stretch" />
+                <Button x:Name="BalancedButton" x:Uid="BalancedButton" Tag="Balanced" Click="QuickSlotButton_Click" Grid.Column="1" HorizontalAlignment="Stretch" />
+                <Button x:Name="HighPerformanceButton" x:Uid="HighPerformanceButton" Tag="HighPerformance" Click="QuickSlotButton_Click" Grid.Row="1" HorizontalAlignment="Stretch" />
+                <Button x:Name="UltimatePerformanceButton" x:Uid="UltimatePerformanceButton" Tag="UltimatePerformance" Click="QuickSlotButton_Click" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" />
+            </Grid>
+            <ToggleSwitch x:Name="TrayAutoToggle" x:Uid="TrayAutoToggle" Toggled="TrayAutoToggle_Toggled" />
+            <TextBlock x:Name="NextSwitchText" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="Wrap" />
+            <Button x:Uid="TrayOpenButton" Click="OpenButton_Click" HorizontalAlignment="Stretch" />
+        </StackPanel>
+    </Border>
+</Window>

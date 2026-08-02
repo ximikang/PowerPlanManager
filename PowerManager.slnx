@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="src/PowerManager.Core/PowerManager.Core.csproj" />
+  <Project Path="src/PowerManager.App/PowerManager.App.csproj" />
+  <Project Path="tests/PowerManager.Core.Tests/PowerManager.Core.Tests.csproj" />
+</Solution>

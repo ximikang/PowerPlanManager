@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
+  <resheader name="version"><value>2.0</value></resheader>
+  <resheader name="reader"><value>System.Resources.ResXResourceReader, System.Windows.Forms</value></resheader>
+  <resheader name="writer"><value>System.Resources.ResXResourceWriter, System.Windows.Forms</value></resheader>
+  <data name="AppDisplayName" xml:space="preserve"><value>电源计划管理器</value></data>
+  <data name="AppDescription" xml:space="preserve"><value>快速切换并定时管理 Windows 电源计划。</value></data>
+  <data name="Main_Title.Text" xml:space="preserve"><value>电源计划管理器</value></data>
+  <data name="Main_Subtitle.Text" xml:space="preserve"><value>快速切换并按每日时间段自动管理 Windows 电源计划</value></data>
+  <data name="CurrentPlanLabel.Text" xml:space="preserve"><value>当前计划</value></data>
+  <data name="AutoSwitchToggle.Header" xml:space="preserve"><value>自动切换</value></data>
+  <data name="QuickTitle.Text" xml:space="preserve"><value>快速模式</value></data>
+  <data name="PowerSaverButton.Content" xml:space="preserve"><value>节能</value></data>
+  <data name="BalancedButton.Content" xml:space="preserve"><value>平衡</value></data>
+  <data name="HighPerformanceButton.Content" xml:space="preserve"><value>高性能</value></data>
+  <data name="UltimatePerformanceButton.Content" xml:space="preserve"><value>卓越性能</value></data>
+  <data name="MappingsTitle.Text" xml:space="preserve"><value>快捷槽位绑定</value></data>
+  <data name="PowerSaverMappingLabel.Text" xml:space="preserve"><value>节能</value></data>
+  <data name="BalancedMappingLabel.Text" xml:space="preserve"><value>平衡</value></data>
+  <data name="HighPerformanceMappingLabel.Text" xml:space="preserve"><value>高性能</value></data>
+  <data name="UltimatePerformanceMappingLabel.Text" xml:space="preserve"><value>卓越性能</value></data>
+  <data name="DefaultPlanLabel.Text" xml:space="preserve"><value>未覆盖时间使用</value></data>
+  <data name="SaveMappingsButton.Content" xml:space="preserve"><value>保存绑定</value></data>
+  <data name="CreateMissingButton.Content" xml:space="preserve"><value>创建并绑定缺失的标准计划</value></data>
+  <data name="ScheduleTitle.Text" xml:space="preserve"><value>每日时间段</value></data>
+  <data name="ScheduleHint.Text" xml:space="preserve"><value>每天重复同一组时间段；支持跨午夜，但不允许重叠。</value></data>
+  <data name="TimelineTitle.Text" xml:space="preserve"><value>24 小时自动计划</value></data>
+  <data name="Timeline_Default_Format" xml:space="preserve"><value>{0}–{1}：{2}（默认）</value></data>
+  <data name="Timeline_Rule_Format" xml:space="preserve"><value>{0}–{1}：{2}</value></data>
+  <data name="StartTimeLabel.Text" xml:space="preserve"><value>开始</value></data>
+  <data name="EndTimeLabel.Text" xml:space="preserve"><value>结束</value></data>
+  <data name="TargetSlotLabel.Text" xml:space="preserve"><value>模式</value></data>
+  <data name="AddRuleButton.Content" xml:space="preserve"><value>添加时间段</value></data>
+  <data name="DeleteRuleButton.AutomationProperties.Name" xml:space="preserve"><value>删除时间段</value></data>
+  <data name="GeneralTitle.Text" xml:space="preserve"><value>常规设置</value></data>
+  <data name="StartupToggle.Header" xml:space="preserve"><value>登录时启动</value></data>
+  <data name="NotificationsToggle.Header" xml:space="preserve"><value>显示状态通知</value></data>
+  <data name="LanguageLabel.Text" xml:space="preserve"><value>语言</value></data>
+  <data name="DiagnosticsTitle.Text" xml:space="preserve"><value>诊断信息</value></data>
+  <data name="RefreshButton.Content" xml:space="preserve"><value>刷新电源计划</value></data>
+  <data name="TrayFlyoutTitle.Text" xml:space="preserve"><value>电源计划管理器</value></data>
+  <data name="TrayAutoToggle.Header" xml:space="preserve"><value>自动切换</value></data>
+  <data name="TrayOpenButton.Content" xml:space="preserve"><value>打开设置</value></data>
+  <data name="Slot_PowerSaver" xml:space="preserve"><value>节能</value></data>
+  <data name="Slot_Balanced" xml:space="preserve"><value>平衡</value></data>
+  <data name="Slot_HighPerformance" xml:space="preserve"><value>高性能</value></data>
+  <data name="Slot_UltimatePerformance" xml:space="preserve"><value>卓越性能</value></data>
+  <data name="Tray_Auto" xml:space="preserve"><value>自动切换</value></data>
+  <data name="Tray_Open" xml:space="preserve"><value>打开设置</value></data>
+  <data name="Tray_Exit" xml:space="preserve"><value>退出</value></data>
+  <data name="Tray_Create_Format" xml:space="preserve"><value>{0}（创建）</value></data>
+  <data name="Language_System" xml:space="preserve"><value>跟随 Windows</value></data>
+  <data name="Language_English" xml:space="preserve"><value>English</value></data>
+  <data name="Language_Chinese" xml:space="preserve"><value>简体中文</value></data>
+  <data name="Plan_Unmapped" xml:space="preserve"><value>未绑定</value></data>
+  <data name="Plan_Other" xml:space="preserve"><value>其他计划</value></data>
+  <data name="Plan_Unavailable" xml:space="preserve"><value>不可用</value></data>
+  <data name="NextSwitch_None" xml:space="preserve"><value>没有定时节点</value></data>
+  <data name="NextSwitch_Format" xml:space="preserve"><value>下次切换：{0:g}</value></data>
+  <data name="CurrentPlan_Format" xml:space="preserve"><value>{0} — {1}</value></data>
+  <data name="Diagnostics_Format" xml:space="preserve"><value>找到 {0} 个计划 · 当前 GUID：{1}</value></data>
+  <data name="FirstRun_Title" xml:space="preserve"><value>保持定时规则运行</value></data>
+  <data name="FirstRun_Text" xml:space="preserve"><value>允许电源计划管理器在登录后启动，以便每日时间段持续生效。你可以稍后修改。</value></data>
+  <data name="FirstRun_Enable" xml:space="preserve"><value>开启登录启动</value></data>
+  <data name="FirstRun_Skip" xml:space="preserve"><value>暂不开启</value></data>
+  <data name="Create_Title" xml:space="preserve"><value>创建缺失的电源计划？</value></data>
+  <data name="Create_Text" xml:space="preserve"><value>这会新增缺失的 Windows 标准计划副本，不会删除或修改现有计划。</value></data>
+  <data name="CreateSlot_Title" xml:space="preserve"><value>创建{0}电源计划？</value></data>
+  <data name="CreateSlot_Text" xml:space="preserve"><value>此 Windows 标准计划当前不可用。是否创建一个副本、绑定到该槽位并立即切换？现有计划不会被修改或删除。</value></data>
+  <data name="Create_Confirm" xml:space="preserve"><value>创建</value></data>
+  <data name="Common_Cancel" xml:space="preserve"><value>取消</value></data>
+  <data name="Exit_Title" xml:space="preserve"><value>退出电源计划管理器？</value></data>
+  <data name="Exit_Text" xml:space="preserve"><value>应用再次运行前，自动切换将停止。</value></data>
+  <data name="Exit_Confirm" xml:space="preserve"><value>退出</value></data>
+  <data name="Restart_Title" xml:space="preserve"><value>需要重启</value></data>
+  <data name="Restart_Text" xml:space="preserve"><value>重启应用后，所选语言将在所有位置生效。</value></data>
+  <data name="Common_OK" xml:space="preserve"><value>确定</value></data>
+  <data name="Status_Saved" xml:space="preserve"><value>设置已保存。</value></data>
+  <data name="Status_Created" xml:space="preserve"><value>可用的标准计划已创建并绑定。</value></data>
+  <data name="Status_CreatePartial" xml:space="preserve"><value>此设备无法创建部分计划，请改绑可用的 OEM 计划。</value></data>
+  <data name="Status_StartupBlocked" xml:space="preserve"><value>登录启动已被 Windows 设置或组织策略禁用。</value></data>
+  <data name="Error_PlanNotFound" xml:space="preserve"><value>绑定的电源计划已不存在，请刷新或绑定其他计划。</value></data>
+  <data name="Error_AccessDenied" xml:space="preserve"><value>Windows 拒绝了这项电源计划操作。</value></data>
+  <data name="Error_Unsupported" xml:space="preserve"><value>此设备不支持所请求的电源计划操作。</value></data>
+  <data name="Error_PolicyRestricted" xml:space="preserve"><value>组织策略阻止了这项电源计划操作。</value></data>
+  <data name="Error_Generic" xml:space="preserve"><value>无法完成操作。</value></data>
+  <data name="Error_Overlap" xml:space="preserve"><value>该时间段与已有时间段重叠，或开始和结束时间相同。</value></data>
+  <data name="Error_Overlap_Format" xml:space="preserve"><value>{0}–{1} 与已有时间段 {2}–{3} 冲突。</value></data>
+  <data name="Notification_Switched" xml:space="preserve"><value>已切换到{0}。</value></data>
+</root>
