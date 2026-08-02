@@ -50,6 +50,23 @@ After associating the project with the reserved Partner Center identity and inst
 
 Generated packages are written under `src\PowerManager.App\AppPackages`. Certificates, `.pfx` files, and `Package.StoreAssociation.xml` must never be committed.
 
+## GitHub releases
+
+The `Release` workflow builds self-contained portable ZIP archives for x86, x64, and ARM64. Run it manually from the Actions page to download workflow artifacts, or push a version tag to create a GitHub Release automatically:
+
+```powershell
+git tag v1.0.0
+git push origin v1.0.0
+```
+
+Portable archives can also be produced locally:
+
+```powershell
+.\scripts\Build-GitHubRelease.ps1 -Platform x64 -Version 1.0.0
+```
+
+GitHub portable archives are separate from Microsoft Store packages. Use `Build-StorePackages.ps1 -StoreUpload` after associating the project with its Partner Center identity to create Store submission packages.
+
 ## Safety model / 安全模型
 
 - Switching and template duplication run with the current user's rights.

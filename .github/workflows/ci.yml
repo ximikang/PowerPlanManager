@@ -11,8 +11,8 @@ jobs:
       matrix:
         platform: [x86, x64, ARM64]
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: 10.0.x
       - name: Restore
@@ -21,4 +21,4 @@ jobs:
         if: matrix.platform == 'x64'
         run: dotnet test tests\PowerManager.Core.Tests\PowerManager.Core.Tests.csproj -c Release --no-restore
       - name: Build WinUI app
-        run: dotnet build src\PowerManager.App\PowerManager.App.csproj -c Debug -p:Platform=${{ matrix.platform }} --no-restore
+        run: dotnet build src\PowerManager.App\PowerManager.App.csproj -c Release -p:Platform=${{ matrix.platform }} --no-restore

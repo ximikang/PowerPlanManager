@@ -1,0 +1,73 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version used in portable package names
+        required: true
+        default: 1.0.0
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: read
+
+jobs:
+  build-portable:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [x86, x64, ARM64]
+    env:
+      RELEASE_VERSION: ${{ github.event_name == 'workflow_dispatch' && inputs.version || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Restore
+        run: dotnet restore PowerManager.slnx
+
+      - name: Test core
+        if: matrix.platform == 'x64'
+        run: dotnet test tests\PowerManager.Core.Tests\PowerManager.Core.Tests.csproj -c Release --no-restore
+
+      - name: Build portable release
+        shell: pwsh
+        run: .\scripts\Build-GitHubRelease.ps1 -Platform "${{ matrix.platform }}" -Version "$env:RELEASE_VERSION"
+
+      - name: Upload portable release
+        uses: actions/upload-artifact@v7
+        with:
+          name: PowerPlanManager-${{ matrix.platform }}
+          path: artifacts/release/*.zip
+          if-no-files-found: error
+          retention-days: 14
+
+  publish-release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: build-portable
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          pattern: PowerPlanManager-*
+          merge-multiple: true
+          path: release-assets
+
+      - name: Create GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $assets = @(Get-ChildItem release-assets -Filter *.zip)
+          if ($assets.Count -ne 3) {
+            throw "Expected three release archives, found $($assets.Count)."
+          }
+          gh release create "$env:GITHUB_REF_NAME" $assets.FullName --verify-tag --generate-notes --repo "$env:GITHUB_REPOSITORY"
