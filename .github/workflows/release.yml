@@ -36,9 +36,13 @@ jobs:
         if: matrix.platform == 'x64'
         run: dotnet test tests\PowerManager.Core.Tests\PowerManager.Core.Tests.csproj -c Release --no-restore
 
-      - name: Build portable release
+      - name: Build self-contained portable release
         shell: pwsh
-        run: .\scripts\Build-GitHubRelease.ps1 -Platform "${{ matrix.platform }}" -Version "$env:RELEASE_VERSION"
+        run: .\scripts\Build-GitHubRelease.ps1 -Platform "${{ matrix.platform }}" -Version "$env:RELEASE_VERSION" -Variant Portable
+
+      - name: Build minimal framework-dependent release
+        shell: pwsh
+        run: .\scripts\Build-GitHubRelease.ps1 -Platform "${{ matrix.platform }}" -Version "$env:RELEASE_VERSION" -Variant Minimal
 
       - name: Upload portable release
         uses: actions/upload-artifact@v7
@@ -67,7 +71,21 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $assets = @(Get-ChildItem release-assets -Filter *.zip)
-          if ($assets.Count -ne 3) {
-            throw "Expected three release archives, found $($assets.Count)."
+          if ($assets.Count -ne 6) {
+            throw "Expected six release archives, found $($assets.Count)."
           }
-          gh release create "$env:GITHUB_REF_NAME" $assets.FullName --verify-tag --generate-notes --repo "$env:GITHUB_REPOSITORY"
+          $notes = @'
+          Two downloads are available for each CPU architecture:
+
+          - `portable`: recommended; self-contained and does not require separate .NET or Windows App SDK installation.
+          - `minimal`: smaller framework-dependent build; requires .NET 10 Desktop Runtime, Windows App SDK 2.3 Runtime, and Microsoft Visual C++ Redistributable 2015-2022 for the matching architecture.
+
+          Minimal package dependencies: [.NET 10 Desktop Runtime](https://dotnet.microsoft.com/download/dotnet/10.0), [Windows App SDK Runtime](https://learn.microsoft.com/windows/apps/windows-app-sdk/downloads), [Visual C++ Redistributable](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist).
+
+          每种 CPU 架构提供两个版本：
+
+          - `portable`：推荐，自包含，无需单独安装 .NET 或 Windows App SDK。
+          - `minimal`：体积更小，需要安装相同架构的 .NET 10 Desktop Runtime、Windows App SDK 2.3 Runtime 和 Microsoft Visual C++ 2015-2022 Redistributable。
+          '@
+          $notes | Set-Content release-notes.md -Encoding utf8
+          gh release create "$env:GITHUB_REF_NAME" $assets.FullName --verify-tag --notes-file release-notes.md --generate-notes --repo "$env:GITHUB_REPOSITORY"

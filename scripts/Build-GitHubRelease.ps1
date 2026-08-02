@@ -4,7 +4,10 @@ param(
     [string]$Platform,
 
     [Parameter(Mandatory = $true)]
-    [string]$Version
+    [string]$Version,
+
+    [ValidateSet('Portable', 'Minimal')]
+    [string]$Variant = 'Portable'
 )
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
@@ -20,9 +23,10 @@ if ([string]::IsNullOrWhiteSpace($safeVersion)) {
     throw 'Version must contain at least one letter or number.'
 }
 
-$publishRoot = Join-Path $repoRoot "artifacts\portable\$runtimeIdentifier"
+$variantName = $Variant.ToLowerInvariant()
+$publishRoot = Join-Path $repoRoot "artifacts\portable\$variantName\$runtimeIdentifier"
 $releaseRoot = Join-Path $repoRoot 'artifacts\release'
-$archivePath = Join-Path $releaseRoot "PowerPlanManager-$safeVersion-$runtimeIdentifier.zip"
+$archivePath = Join-Path $releaseRoot "PowerPlanManager-$safeVersion-$runtimeIdentifier-$variantName.zip"
 
 $resolvedArtifactsRoot = [System.IO.Path]::GetFullPath((Join-Path $repoRoot 'artifacts'))
 $resolvedPublishRoot = [System.IO.Path]::GetFullPath($publishRoot)
@@ -37,20 +41,34 @@ if (Test-Path -LiteralPath $resolvedPublishRoot) {
 New-Item -ItemType Directory -Path $publishRoot -Force | Out-Null
 New-Item -ItemType Directory -Path $releaseRoot -Force | Out-Null
 
+$isSelfContained = $Variant -eq 'Portable'
 dotnet publish $projectPath `
     -c Release `
     -p:Platform=$Platform `
     -r $runtimeIdentifier `
-    --self-contained true `
+    --self-contained $isSelfContained `
     -p:WindowsPackageType=None `
-    -p:WindowsAppSDKSelfContained=true `
+    -p:WindowsAppSDKSelfContained=$isSelfContained `
     -p:DebugSymbols=false `
     -p:DebugType=None `
     -p:Version=$safeVersion `
     -o $publishRoot
 if ($LASTEXITCODE -ne 0) {
-    throw "Portable publish failed for $Platform."
+    throw "$Variant publish failed for $Platform."
+}
+
+$keptLanguages = @('en-us', 'zh-cn')
+$languageDirectoryPattern = '^[a-z]{2,3}(?:-[a-z0-9]+){1,2}$'
+Get-ChildItem -LiteralPath $publishRoot -Directory | Where-Object {
+    $_.Name -match $languageDirectoryPattern -and $keptLanguages -notcontains $_.Name.ToLowerInvariant()
+} | ForEach-Object {
+    Remove-Item -LiteralPath $_.FullName -Recurse -Force
+}
+
+if ($Variant -eq 'Minimal') {
+    $requirementsPath = Join-Path $repoRoot 'docs\release\MINIMAL-REQUIREMENTS.txt'
+    Copy-Item -LiteralPath $requirementsPath -Destination (Join-Path $publishRoot 'MINIMAL-REQUIREMENTS.txt')
 }
 
 Compress-Archive -Path (Join-Path $publishRoot '*') -DestinationPath $archivePath -Force
-Write-Output "Portable release: $archivePath"
+Write-Output "$Variant release: $archivePath"

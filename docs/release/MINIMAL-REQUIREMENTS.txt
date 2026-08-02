@@ -1,0 +1,15 @@
+Power Plan Manager - Minimal package dependencies
+电源计划管理器 - 最小包运行依赖
+
+This framework-dependent build requires all of the following components for the same CPU architecture as this ZIP:
+此框架依赖版本需要预先安装与 ZIP 架构一致的以下全部组件：
+
+1. .NET 10 Desktop Runtime
+   https://dotnet.microsoft.com/download/dotnet/10.0
+2. Windows App SDK 2.3 Runtime
+   https://learn.microsoft.com/windows/apps/windows-app-sdk/downloads
+3. Microsoft Visual C++ Redistributable 2015-2022
+   https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist
+
+If you do not want to install these dependencies, download the portable package instead.
+如果不希望安装这些运行环境，请下载 portable 便携版。

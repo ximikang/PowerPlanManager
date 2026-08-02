@@ -52,7 +52,10 @@ Generated packages are written under `src\PowerManager.App\AppPackages`. Certifi
 
 ## GitHub releases
 
-The `Release` workflow builds self-contained portable ZIP archives for x86, x64, and ARM64. Run it manually from the Actions page to download workflow artifacts, or push a version tag to create a GitHub Release automatically:
+The `Release` workflow builds two ZIP variants for x86, x64, and ARM64. Run it manually from the Actions page to download workflow artifacts, or push a version tag to create a GitHub Release automatically:
+
+- `portable`: self-contained, with only English and Simplified Chinese runtime resources retained.
+- `minimal`: framework-dependent and much smaller; requires the matching-architecture .NET 10 Desktop Runtime, Windows App SDK 2.3 Runtime, and Microsoft Visual C++ Redistributable 2015-2022.
 
 ```powershell
 git tag v1.0.0
@@ -62,7 +65,8 @@ git push origin v1.0.0
 Portable archives can also be produced locally:
 
 ```powershell
-.\scripts\Build-GitHubRelease.ps1 -Platform x64 -Version 1.0.0
+.\scripts\Build-GitHubRelease.ps1 -Platform x64 -Version 1.0.0 -Variant Portable
+.\scripts\Build-GitHubRelease.ps1 -Platform x64 -Version 1.0.0 -Variant Minimal
 ```
 
 GitHub portable archives are separate from Microsoft Store packages. Use `Build-StorePackages.ps1 -StoreUpload` after associating the project with its Partner Center identity to create Store submission packages.
